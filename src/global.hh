@@ -14,4 +14,6 @@
 
 #include <csignal>
 
+//my own includes
+#include <signal.h>
 #endif

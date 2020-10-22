@@ -2,13 +2,15 @@
 
 #include <unistd.h> 
 
+//Para sali de un proceso (ctrl+c)2 veces
 void signal_handler( int signal_num ) { 
 	static uint32_t trials = 0;
 	
 	trials++;
-	std::cout << "Interrupt signal is (" << signal_num << ").\n"; 
-  
+	std::cout << " Para interrumpir programa (ctrl+c) (" << signal_num << ") veces.\n";
+
 	if(trials == 2){
+		std::cout << "\nPrograma finalizado con éxito.\n";
 		exit(signal_num);  
 	} 
 } 
@@ -24,8 +26,9 @@ int main(int argc, char* argv[])
 	  
 	while(++count) { 
 		std::this_thread::sleep_for(std::chrono::seconds(1));
-		std::cout << "Hello ... PID=" << getpid() << std::endl; 
-		if( count == 50 ) {
+		std::cout << "Programa en ejecución ... PID=" << getpid() << std::endl;
+		std::cout << "En espera de señal SIGUSR1"<< std::endl;
+		if( count == 100 ) {
 			std::raise(SIGTERM); 
 		} 
 	}
