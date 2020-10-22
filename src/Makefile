@@ -1,9 +1,7 @@
 CC=gcc
 CXX=g++
 RM=rm -f
-
 TARGET=../hora
-
 
 INCLUDES=-I./include -I/opt/local/include
 LDFLAGS=-L/usr/local/lib 
@@ -13,9 +11,9 @@ CXXFLAGS=-std=c++17 -Wall -O2
 
 DIR_OBJ=objs
 
-SRCS=$(wildcard *.cc)
+SRCS=$(wildcard *.c)
 
-OBJS=$(patsubst %.cc,$(DIR_OBJ)/%.o,$(SRCS))
+OBJS=$(patsubst %.c,$(DIR_OBJ)/%.o,$(SRCS))
 
 
 all: $(TARGET)
@@ -25,7 +23,7 @@ $(TARGET): $(OBJS)
 	@echo Linking [$@]
 	@$(CXX) -o $@ $^ $(CXXFLAGS) $(LDLIBS) $(LDFLAGS) 
 
-$(DIR_OBJ)/%.o: %.cc
+$(DIR_OBJ)/%.o: %.c
 	@echo Compiling [$@]
 	@mkdir -p $(DIR_OBJ)
 	@$(CXX) -c -o $@ $< $(CXXFLAGS) $(INCLUDES)
