@@ -1,5 +1,5 @@
 # Teoría de Sistemas Operativos - Tarea #1
-_Procesos y Señales en Linux Escuela de Ingeniería Civil Informática Universidad de Valparaíso_
+_Procesos y Señales en Linux Escuela de Ingeniería Civil Informática Universidad de Valparaíso._
 
 ### Diseño de la solución 🔧
 _Por definir_
