@@ -8,4 +8,4 @@ _Por definir_
 _Por definir_
 
 ## Autor ✒️
-* **Marcelo Leiton** - *marcelo.leiton@alumnos.uv.cl* - [GitHub](https://github.com/marceloleiton)
+* **Marcelo Osvaldo Leiton Valdés** - *marcelo.leiton@alumnos.uv.cl* - [GitHub](https://github.com/marceloleiton)
