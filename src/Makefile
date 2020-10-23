@@ -1,5 +1,5 @@
-CC=gcc
-CXX=g++
+C=gcc
+#CXX=g++
 RM=rm -f
 TARGET=../hora
 
