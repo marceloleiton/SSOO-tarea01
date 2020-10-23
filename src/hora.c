@@ -8,7 +8,7 @@ void recibidora(int sig){
     time_t tiempoactual;
     time(&tiempoactual);
     if (signal(SIGUSR1, recibidora) == SIG_ERR){
-        perror("no puedo obtener la señal");
+        perror("Error al obtener la señal");
     }
     else{
         printf("\nSeñal SIGUSR1 recibida: %s\n", ctime(&tiempoactual));
