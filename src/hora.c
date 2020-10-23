@@ -10,9 +10,9 @@ void Recibed_Signal(int Num_Signal_SIGUSR1){
     }
     else{
         if (tiempoactual == -1){
-            printf("Error al encontrar el tiempo");
+            printf("Error al encontrar el tiempo\n");
         }else{
-            printf("\nSeñal SIGUSR1 recibida: %s\n", ctime(&tiempoactual));
+            printf("\nSeñal SIGUSR1 recibida: %s", ctime(&tiempoactual));
         }
     }
 }
@@ -34,9 +34,9 @@ int main(){
     //se recibe la señal (&Recibed_Signal), cuando el proceso reciba la interrupción SIGUSR1.
     signal(SIGUSR1, &Recibed_Signal);
     int contador = 0;
-    printf("Programa hora ejecutandose. PID= %d \n", getpid());
+    printf("Programa hora ejecutandose. PID= %d ", getpid());
     while (++contador){
-        printf("Listo para recibir señal SIGUSR1.\n");
+        printf("\nListo para recibir señal SIGUSR1.\n");
         sleep(100000); //Tiempo muy grande, para la espera de instrucción
     }
     return 0;
