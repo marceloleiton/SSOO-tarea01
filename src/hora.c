@@ -2,9 +2,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
-#include <signal.h>
 //manejo recibo de señal
 void recibidora(int sig){
     time_t tiempoactual;
