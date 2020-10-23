@@ -1,4 +1,4 @@
-#include <global.h>
+#include <global.h> //Librerías en: include/global.h
 //Recibed_Signal -> función que recibe la señal de SIGUSR1 y imprime el tiempo al recibirla.
 //Se ingresa por argumento un entero, el número de la señal SIGUSR1.
 void Recibed_Signal(int Num_Signal_SIGUSR1){
@@ -37,7 +37,7 @@ int main(){
     printf("Programa hora ejecutandose. PID= %d \n", getpid());
     while (++contador){
         printf("\nListo para recibir señal SIGUSR1.\n");
-        sleep(100000);
+        sleep(100000); //Tiempo muy grande, para la espera de instrucción
     }
     return 0;
 }
