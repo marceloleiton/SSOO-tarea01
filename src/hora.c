@@ -7,7 +7,10 @@
 #include <unistd.h>
 #include <time.h>
 #include <signal.h>
-
+void recibidora(int signo){
+    if(signo == SIGUSR1){printf("recibi la señal");}
+    else{printf("error de señal");}   
+}
 //Manejador de finalización del proceso
 void handler(int signal_num)
 {
@@ -19,13 +22,14 @@ void handler(int signal_num)
         printf("\nPrograma finalizado con éxito.\n");
         exit(signal_num);
     }
+  
 }
 int main(){
-    int contador = 0;
-    // register the signals and the signal handler
     signal(SIGTERM, handler);
     signal(SIGINT, handler);
     signal(SIGKILL, handler);
+
+    int contador = 0;  
     while (++contador)
     {
     //std::this_thread::sleep_for(std::chrono::seconds(1));
