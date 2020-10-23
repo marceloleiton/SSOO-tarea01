@@ -11,5 +11,3 @@ _Función: handler(). Es la función encargada de hacer lo que tiene que ver con
 
 ## Autor ✒️
 * **Marcelo Osvaldo Leiton Valdés** - *marcelo.leiton@alumnos.uv.cl* - [GitHub](https://github.com/marceloleiton)
-
-http://www.chuidiang.org/clinux/senhales/senhales.php
