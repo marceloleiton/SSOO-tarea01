@@ -1,12 +1,11 @@
+#Sentencias para compilación de los programas.
 CC=gcc
 CXX=gcc
 RM=rm -f
-
 TARGET=../hora
 INCLUDES=-I./include -I/opt/local/include
 LDFLAGS=-L/usr/local/lib 
 LDLIBS=-lpthread
-
 CFLAGS  = -g -Wall
 
 DIR_OBJ=objs
