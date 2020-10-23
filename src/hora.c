@@ -22,6 +22,7 @@ void handler(int signal_num){
     if (trials == 2){
         printf("\nPrograma finalizado con éxito.\n");
         exit(signal_num);
+    
     }
 }
 int main(){
