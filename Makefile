@@ -1,7 +1,5 @@
-
 SRCDIR=src
 default: all
-
 all: 
 	@for i in $(SRCDIR); do \
 	echo "make all in $$i..."; \
@@ -16,7 +14,5 @@ distclean:
 	@for i in $(SRCDIR); do \
 	echo "make clean && make distclean in $$i..."; \
 	(cd $$i && $(MAKE) clean && $(MAKE) distclean); done
-
-
 .PHONY: all clean distclean
 

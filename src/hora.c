@@ -1,10 +1,4 @@
-//Declaración de librerías utilizadas.
-#include <signal.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <time.h>
-#include <sys/wait.h>
+#include <global.h>
 //Recibed_Signal -> función que recibe la señal de SIGUSR1 y imprime el tiempo al recibirla.
 //Se ingresa por argumento un entero, el número de la señal SIGUSR1.
 void Recibed_Signal(int Num_Signal_SIGUSR1){

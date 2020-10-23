@@ -1,13 +1,13 @@
-C=gcc
-#CXX=g++
+CC=gcc
+CXX=gcc
 RM=rm -f
-TARGET=../hora
 
+TARGET=../hora
 INCLUDES=-I./include -I/opt/local/include
 LDFLAGS=-L/usr/local/lib 
 LDLIBS=-lpthread
 
-CXXFLAGS=-std=c++17 -Wall -O2
+CFLAGS  = -g -Wall
 
 DIR_OBJ=objs
 
@@ -21,12 +21,12 @@ all: $(TARGET)
 
 $(TARGET): $(OBJS)
 	@echo Linking [$@]
-	@$(CXX) -o $@ $^ $(CXXFLAGS) $(LDLIBS) $(LDFLAGS) 
+	@$(CXX) -o $@ $^ $(CFLAGS) $(LDLIBS) $(LDFLAGS) 
 
 $(DIR_OBJ)/%.o: %.c
 	@echo Compiling [$@]
 	@mkdir -p $(DIR_OBJ)
-	@$(CXX) -c -o $@ $< $(CXXFLAGS) $(INCLUDES)
+	@$(CXX) -c -o $@ $< $(CFLAGS) $(INCLUDES)
 
 clean:
 	@$(RM) $(OBJS)
@@ -37,4 +37,3 @@ distclean: clean
 	@$(RM) -f $(DIR_OBJ)
 
 .PHONY: all clean distclean
-	
