@@ -36,7 +36,7 @@ int main(){
     int contador = 0;
     printf("Programa hora ejecutandose. PID= %d \n", getpid());
     while (++contador){
-        printf("Listo para recibir señal SIGUSR1.\n");
+        printf("\nListo para recibir señal SIGUSR1.\n");
         sleep(100000);
     }
     return 0;
