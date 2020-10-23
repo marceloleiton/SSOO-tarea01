@@ -4,9 +4,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include <sys/wait.h>
 //Recibed_Signal -> función que recibe la señal de SIGUSR1 y imprime el tiempo al recibirla.
 //Se ingresa por argumento un entero, el número de la señal SIGUSR1.
-void Recibed_Signal(int sig){
+void Recibed_Signal(int Num_Signal_SIGUSR1){
     time_t tiempoactual;
     time(&tiempoactual);
     //Sentencias condicionales indican si recibe la señal o no, y que hacer en ambos casos.
@@ -23,9 +24,10 @@ void Recibed_Signal(int sig){
 }
 //Manejador para el control de termino de ejecución, para que cumpla solo la condición de (ctrl+c) 2 veces.
 void handler(int signal_num){
-    static uint32_t trials = 0;
-    trials++;
-    if (trials == 2){
+    static uint32_t End_Process = 0;
+    End_Process++;
+    if (End_Process == 2)
+    {
         printf("\nPrograma finalizado con éxito.\n");
         exit(signal_num);
     }
@@ -41,7 +43,7 @@ int main(){
     printf("Programa hora ejecutandose. PID= %d \n", getpid());
     while (++contador){
         printf("Listo para recibir señal SIGUSR1.\n");
-        sleep(1000);
+        sleep(100000);
     }
     return 0;
 }
