@@ -25,7 +25,6 @@ void Recibed_Signal(int sig){
 void handler(int signal_num){
     static uint32_t trials = 0;
     trials++;
-    printf(" Para interrumpir programa (ctrl+c) %d  veces.\n", signal_num);
     if (trials == 2){
         printf("\nPrograma finalizado con éxito.\n");
         exit(signal_num);
