@@ -22,28 +22,25 @@ void handler(int signal_num)
         printf("\nPrograma finalizado con éxito.\n");
         exit(signal_num);
     }
-  
 }
 int main(){
     signal(SIGTERM, handler);
     signal(SIGINT, handler);
     signal(SIGKILL, handler);
     signal(SIGUSR1, &recibidora);
+    printf("\nPrograma hora ejecutandose. PID= %d \n", getpid());
     int contador = 0;
     while (++contador)
     {
     //std::this_thread::sleep_for(std::chrono::seconds(1));
-    
-    printf("\nPrograma hora ejecutandose. PID= %d \n", getpid());
     printf("Listo para recibir señal SIGUSR1.\n");
-    sleep(100);
+    sleep(20);
     //if (signal(SIGUSR1,recibidora) == SIG_ERR)
     //{
         //perror("no puedo obtener la señal");
     //}
     //else
-    //{
-        
+    //{  
     //}
     }
     return 0;
