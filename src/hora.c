@@ -39,5 +39,5 @@ int main(){
         printf("\nListo para recibir señal SIGUSR1.\n");
         sleep(100000); //Tiempo muy grande, para la espera de instrucción
     }
-    return 0;
+    return EXIT_SUCCESS;
 }
